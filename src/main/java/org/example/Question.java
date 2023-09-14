@@ -3,19 +3,19 @@ package org.example;
 import java.util.ArrayList;
 
 public abstract class Question {
-    private ArrayList<String> text;
+    String text;
 
     private ArrayList<String> possibleAnswers;
 
-    public Question(ArrayList<String> text, ArrayList<String> possibleAnswers) {
+    public Question(String text, ArrayList<String> possibleAnswers) {
     }
 
 
-    public ArrayList<String> getText() {
+    public String getText() {
         return text;
     }
 
-    public void setText(ArrayList<String> text) {
+    public void setText(String text) {
         this.text = text;
     }
 
@@ -27,15 +27,21 @@ public abstract class Question {
         this.possibleAnswers = possibleAnswers;
     }
 
-    public abstract boolean checkAnswer();
+    public abstract boolean isCorrect();
     public double grade (){
-        return grade();
+        double score = 0.0;
+        return score;
     }
 
     public void printQuestion() {
-    }
+            System.out.println(text);
+        }
 
-    public void printAnswer(){
+
+    public void printPossibleAnswers(){
+        for (String answers : possibleAnswers) {
+            System.out.println(answers);
+        }
 
     }
 }
