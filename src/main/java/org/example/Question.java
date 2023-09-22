@@ -3,45 +3,30 @@ package org.example;
 import java.util.ArrayList;
 
 public abstract class Question {
-    String text;
-
-    private ArrayList<String> possibleAnswers;
-
-    public Question(String text, ArrayList<String> possibleAnswers) {
-    }
+    private int pointValue;
+     private String text;
 
 
-    public String getText() {
-        return text;
-    }
 
-    public void setText(String text) {
+    public Question(int pointValue, String text) {
+        this.pointValue = pointValue;
         this.text = text;
-    }
-
-    public ArrayList<String> getPossibleAnswers() {
-        return possibleAnswers;
-    }
-
-    public void setPossibleAnswers(ArrayList<String> possibleAnswers) {
-        this.possibleAnswers = possibleAnswers;
-    }
-
-    public abstract boolean isCorrect();
-    public double grade (){
-        double score = 0.0;
-        return score;
-    }
-
-    public void printQuestion() {
-            System.out.println(text);
-        }
-
-
-    public void printPossibleAnswers(){
-        for (String answers : possibleAnswers) {
-            System.out.println(answers);
-        }
 
     }
+
+    public void displayQuestion() {
+        System.out.println(text);
+    }
+
+    public void setPointValue(int x) {
+        this.pointValue = x;
+    }
+
+    public int getPointValue() {return this.pointValue; }
+
+    public abstract void displayAnswers();
+
+    public abstract int getAnswers();
+
+
 }
